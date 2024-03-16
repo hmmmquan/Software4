@@ -14,9 +14,9 @@ class Pizza {
 
     public void eat() {
         System.out.println(this.chain +
-                            "\nSize: " + this.size +
-                            "\n" + this.toppings.size() + " Toppings: " + String.join(", ", this.toppings) +
-                            "\n");
+                "\nSize: " + this.size +
+                "\n" + this.toppings.size() + " Toppings: " + String.join(", ", this.toppings) +
+                "\n");
     }
 
     public static class Builder {
@@ -33,8 +33,83 @@ class Pizza {
             return this;
         }
 
-        public Builder addTopping(String topping) {
-            this.toppings.add(topping);
+        public Builder pepperoni() {
+            this.toppings.add("Pepperoni");
+            return this;
+        }
+
+        public Builder sausage() {
+            this.toppings.add("Sausage");
+            return this;
+        }
+
+        public Builder mushrooms() {
+            this.toppings.add("Mushrooms");
+            return this;
+        }
+
+        public Builder bacon() {
+            this.toppings.add("Bacon");
+            return this;
+        }
+
+        public Builder onions() {
+            this.toppings.add("Onions");
+            return this;
+        }
+
+        public Builder extraCheese() {
+            this.toppings.add("Extra Cheese");
+            return this;
+        }
+
+        public Builder peppers() {
+            this.toppings.add("Peppers");
+            return this;
+        }
+
+        public Builder chicken() {
+            this.toppings.add("Chicken");
+            return this;
+        }
+
+        public Builder olives() {
+            this.toppings.add("Olives");
+            return this;
+        }
+
+        public Builder spinach() {
+            this.toppings.add("Spinach");
+            return this;
+        }
+
+        public Builder tomatoAndBasil() {
+            this.toppings.add("Tomato and Basil");
+            return this;
+        }
+
+        public Builder beef() {
+            this.toppings.add("Beef");
+            return this;
+        }
+
+        public Builder ham() {
+            this.toppings.add("Ham");
+            return this;
+        }
+
+        public Builder pesto() {
+            this.toppings.add("Pesto");
+            return this;
+        }
+
+        public Builder spicyPork() {
+            this.toppings.add("Spicy Pork");
+            return this;
+        }
+
+        public Builder hamAndPineapple() {
+            this.toppings.add("Ham and Pineapple");
             return this;
         }
 
@@ -44,35 +119,36 @@ class Pizza {
     }
 }
 
+
 public class PizzaAndMovies {
     public static void main(String[] args) {
         //Part 1
         System.out.println("PART 1-----------------------");
         Pizza small = new Pizza.Builder("Small")
-                .addTopping("Pepperoni")
-                .addTopping("Sausage")
-                .addTopping("Mushrooms")
+                .pepperoni()
+                .sausage()
+                .mushrooms()
                 .build();
 
         Pizza medium = new Pizza.Builder("Medium")
-                .addTopping("Bacon")
-                .addTopping("Onions")
-                .addTopping("Extra Cheese")
-                .addTopping("Peppers")
-                .addTopping("Chicken")
-                .addTopping("Olives")
+                .bacon()
+                .onions()
+                .extraCheese()
+                .peppers()
+                .chicken()
+                .olives()
                 .build();
 
         Pizza large = new Pizza.Builder("Large")
-                .addTopping("Spinach")
-                .addTopping("Tomato and Basil")
-                .addTopping("Beef")
-                .addTopping("Ham")
-                .addTopping("Pesto")
-                .addTopping("Spicy Pork")
-                .addTopping("Ham and Pineapple")
-                .addTopping("Pepperoni")
-                .addTopping("Sausage")
+                .spinach()
+                .tomatoAndBasil()
+                .beef()
+                .ham()
+                .pesto()
+                .spicyPork()
+                .hamAndPineapple()
+                .pepperoni()
+                .sausage()
                 .build();
 
         small.eat();
@@ -83,49 +159,49 @@ public class PizzaAndMovies {
         System.out.println("PART 2-----------------------");
         Pizza pizzaHut1 = new Pizza.Builder("Large")
                 .chain("Pizza Hut")
-                .addTopping("Pepperoni")
-                .addTopping("Sausage")
-                .addTopping("Mushrooms")
+                .pepperoni()
+                .sausage()
+                .mushrooms()
                 .build();
 
         Pizza pizzaHut2 = new Pizza.Builder("Small")
                 .chain("Pizza Hut")
-                .addTopping("Bacon")
-                .addTopping("Onions")
+                .bacon()
+                .onions()
                 .build();
 
         Pizza littleCaesars1 = new Pizza.Builder("Medium")
                 .chain("Little Caesars")
-                .addTopping("Extra Cheese")
-                .addTopping("Peppers")
-                .addTopping("Chicken")
-                .addTopping("Olives")
-                .addTopping("Spinach")
-                .addTopping("Tomato and Basil")
-                .addTopping("Beef")
-                .addTopping("Ham")
+                .extraCheese()
+                .peppers()
+                .chicken()
+                .olives()
+                .spinach()
+                .tomatoAndBasil()
+                .beef()
+                .ham()
                 .build();
 
         Pizza littleCaesars2 = new Pizza.Builder("Small")
                 .chain("Little Caesars")
-                .addTopping("Pesto")
-                .addTopping("Spicy Pork")
-                .addTopping("Ham and Pineapple")
-                .addTopping("Pepperoni")
-                .addTopping("Sausage")
-                .addTopping("Mushrooms")
+                .pesto()
+                .spicyPork()
+                .hamAndPineapple()
+                .pepperoni()
+                .sausage()
+                .mushrooms()
                 .build();
 
         Pizza dominos1 = new Pizza.Builder("Small")
                 .chain("Dominos")
-                .addTopping("Bacon")
+                .bacon()
                 .build();
 
         Pizza dominos2 = new Pizza.Builder("Large")
                 .chain("Dominos")
-                .addTopping("Onions")
-                .addTopping("Extra Cheese")
-                .addTopping("Peppers")
+                .onions()
+                .extraCheese()
+                .peppers()
                 .build();
 
         pizzaHut1.eat();
